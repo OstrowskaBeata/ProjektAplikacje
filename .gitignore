@@ -1,0 +1,13 @@
+
+.idea/vcs.xml
+.idea/ProjektAplikacje.iml
+.idea/modules.xml
+.idea/misc.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/inspectionProfiles/profiles_settings.xml
+*.pyc
+*.pyc
+*.pyc
+naszaStronka/naszaStronka/settings.py
+naszaStronka/naszaAplikacja/migrations/__pycache__/__init__.cpython-310.pyc
+naszaStronka/naszaAplikacja/migrations/__pycache__/0002_alter_ciezarowka_nazwamarki.cpython-310.pyc
