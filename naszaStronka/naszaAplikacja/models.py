@@ -48,7 +48,6 @@ class Kierowca(models.Model):
     nazwisko = models.CharField(max_length=60, null=False, blank=False)
     kryteriumLadunek = models.IntegerField(choices=LADUNEK.choices, default=LADUNEK.choices[0])
     kryteriumDystans = models.IntegerField(choices=DYSTANS.choices, default=DYSTANS.choices[0])
-    data_dodania = models.DateField(auto_now_add=True)
     zlecenia = models.ForeignKey(Zlecenia, null=True, on_delete=models.SET_NULL)
     ciezarowka = models.ForeignKey(Ciezarowka, null=True, on_delete=models.SET_NULL)
 
