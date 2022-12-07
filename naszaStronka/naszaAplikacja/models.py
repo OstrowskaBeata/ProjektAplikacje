@@ -29,30 +29,23 @@ class LADUNEK(models.IntegerChoices):
 class Zlecenia(models.Model):
     nazwaZlecenia = models.CharField(max_length=60, null=False, blank=False)
     nazwaLadunku = models.IntegerField(choices=LADUNEK.choices, default=LADUNEK.choices[0][0])
-    dystans = models.CharField(max_length=60, null=False, blank=False)
+    dystans = models.IntegerField(max_length=60, null=False, blank=False)
     czasRealizacji = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.nazwaZlecenia
 
-class DYSTANS(models.IntegerChoices):
-    do_350 = 350
-    do_550 = 550
-    do_850 = 850
-    do_1100 = 1100
-    do_1500 = 1500
-    wszedzie = 1
-
 class Kierowca(models.Model):
     imie = models.CharField(max_length=60, null=False, blank=False)
     nazwisko = models.CharField(max_length=60, null=False, blank=False)
-    kryteriumLadunek = models.IntegerField(choices=LADUNEK.choices, default=LADUNEK.choices[0])
-    kryteriumDystans = models.IntegerField(choices=DYSTANS.choices, default=DYSTANS.choices[0])
+    kryteriumLadunek = models.IntegerField(choices=LADUNEK.choices)
+    kryteriumDystans = models.IntegerField(max_length=60, null=False, blank=False)
     zlecenia = models.ForeignKey(Zlecenia, null=True, on_delete=models.SET_NULL)
     ciezarowka = models.ForeignKey(Ciezarowka, null=True, on_delete=models.SET_NULL)
 
     class Meta:
         ordering = ["nazwisko"]
+
 
     def __str__(self):
         return self.imie + " " + self.nazwisko
