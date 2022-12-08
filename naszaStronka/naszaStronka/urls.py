@@ -6,5 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('naszaAplikacja/zlecenia', include('rest_framework.urls')),
     path('naszaAplikacja/ciezarowki', include('rest_framework.urls')),
-    path('naszaAplikacja/kierowcy', include('rest_framework.urls')),
+    path('naszaAplikacja/kierowca', include('rest_framework.urls')),
 ]
